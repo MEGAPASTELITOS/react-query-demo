@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+
+import pages from "../mook/nav-link.json"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-black-stand`}>
+        <header className="">
+          <nav className="bg-black-stand place-content-center p-4 rounded-b-lg">
+            <ul className="flex gap-4 overflow-hidden w-4/5">
+              {pages.map(page => (
+                <li key={page.id} className="border-b-2 border-b-transparent hover:border-glacier-200 transition-colors">
+                  <Link href={page.href}>{page.page}</Link>
+               </li>
+              ))}
+            </ul>
+          </nav>
+         < div className="bg-neutral-800 w-full h-[1px]"/>
+        </header>
         {children}
       </body>
     </html>
