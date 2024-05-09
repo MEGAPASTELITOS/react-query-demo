@@ -1,6 +1,6 @@
 "use client"
 
-import { useData } from "../hooks/useData";
+import { useData } from "../../hooks/useData";
 
 export default function SuperRQHoroesPage() {
 
@@ -8,7 +8,7 @@ export default function SuperRQHoroesPage() {
       
     if(isError) {
       return (
-        <p className="text-center text-2xl">{error.message as string}</p>
+        <p className="text-center text-2xl">{error?.message}</p>
       )
     }
 
@@ -26,7 +26,7 @@ export default function SuperRQHoroesPage() {
       ))}
       <button 
       onClick={refetch} 
-      className={`p-2 border border-white rounded-md hover:brightness-75 mb-1 ${isFetching ?  "border-yellow-400":"border-green-700"}`}>
+      className={`p-2 border border-white rounded-md hover:brightness-75 mb-1`}>
         refetch Heroes
       </button>
       </div>
