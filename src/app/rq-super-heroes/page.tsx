@@ -1,18 +1,14 @@
 "use client"
 
-import { getData } from "@/lib/data";
-import { useQuery } from "@tanstack/react-query";
+import { useData } from "../hooks/useData";
 
 export default function SuperRQHoroesPage() {
 
-    const {error,isError,isLoading,data,refetch,isFetching,isSuccess} = useQuery({
-      queryKey:["super-heroes"],
-      queryFn:getData,
-    })
+    const {error,isError,isLoading,data,refetch,isFetching} = useData()
       
     if(isError) {
       return (
-        <p className="text-center text-2xl">{error.message}</p>
+        <p className="text-center text-2xl">{error.message as string}</p>
       )
     }
 
