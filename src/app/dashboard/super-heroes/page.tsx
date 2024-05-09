@@ -1,6 +1,9 @@
 "use client"
 
 import axios from "axios";
+import { revalidatePath } from "next/cache";
+import Link from "next/link";
+import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function SuperHoroesPage() {
@@ -33,14 +36,13 @@ export default function SuperHoroesPage() {
 
   return (
     <>
-      <h1 className="px-5 text-lg">Super Horoes</h1>
+      <h1 className="px-6 text-lg">Super Horoes</h1>
       {data?.map((data:any) => (
-        <section key={data.id} className="flex place-items-center">
-          <article className="p-5">
+        <article className="flex place-items-center p-3" key={data.id}>
+          <Link href={`/dashboard/super-heroes/${data?.id}`} className="focus:border border-green-400 rounded-sm p-3 ">
             <p>{data.name}</p>
-            <p>Alterego:{data.alterego}</p>
-          </article>
-        </section>
+          </Link>
+        </article>
       ))}
     </>
   );
