@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 
 import pages from "../mook/nav-link.json"
+import { Providers } from "@/Providers/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,7 +33,7 @@ export default function RootLayout({
           </nav>
          < div className="bg-neutral-800 w-full h-[1px]"/>
         </header>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
