@@ -44,7 +44,7 @@ export default function SuperHoroesFindOnePage() {
           </article>
         </section>
 
-        <Link href={"/dashboard/rq-super-heroes"} className="mx-5 p-3 border w-3 h-3 border-white rounded-lg flex place-items-center place-content-center"> {`<`} </Link>
+        <Link href={"/dashboard/super-heroes"} className="mx-5 p-3 border w-3 h-3 border-white rounded-lg flex place-items-center place-content-center"> {`<`} </Link>
     </>
   );
   }
