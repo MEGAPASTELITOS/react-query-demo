@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link";
 import { useData } from "../../hooks/useData";
 
 export default function SuperRQHoroesPage() {
@@ -17,12 +18,11 @@ export default function SuperRQHoroesPage() {
       <h1 className="pt-3 pb-3 text-lg">Rq Super Horoes</h1>
       {isLoading || isFetching && (<p className="text-sm">Loading...</p>)}
       {data?.data?.map((data:any) => (
-        <section key={data.id} className="flex place-items-center">
-          <article className="pb-5">
-            <p>{data.name}</p>
-            <p>Alterego:{data.alterego}</p>
-          </article>
-        </section>
+        <article className="flex place-items-center mb-1" key={data.id}>
+          <Link href={`/dashboard/rq-super-heroes/${data?.id}`} className="focus:border border-green-400 rounded-sm p-2 ">
+          <p>{data.name}</p>
+          </Link>
+        </article>
       ))}
       <button 
       onClick={refetch} 

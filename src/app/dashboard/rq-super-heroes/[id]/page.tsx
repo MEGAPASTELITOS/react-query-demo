@@ -1,35 +1,22 @@
 "use client"
 
-import axios from "axios";
+import { useDataOne } from "@/app/hooks/useDataOne";
+import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
 export default function SuperHoroesFindOnePage() {
   const params = useParams()
-  const [loadingth,setLoadingth] = useState(true)
-  const [error,setError] = useState("")
-  const [data,setData] = useState<SuperHeroes>()
+  const {error,isError,isLoading,data} = useDataOne(params.id as string)
 
-  useEffect(()=> {
-    axios.get(`http://localhost:4000/superheroes/`).then(res => {
-      setData(res.data[Number(params.id) - 1])
-    }).catch((e:Error)=> {
-      setError(e.message)
-      setLoadingth(false)
-    }).finally( () => {
-      setLoadingth(false)
-    })
-  },[params.id])
-
-  if(loadingth) {
+  if(isLoading) {
     return (
       <p className="text-center text-3xl">Loadingth</p>
     )
   }
 
-  if(error){
+  if(isError){
     return (
-      <p className="text-center text-3xl">{error}</p>
+      <p className="text-center text-3xl text-red-400">{error?.message}</p>
     )
   }
 

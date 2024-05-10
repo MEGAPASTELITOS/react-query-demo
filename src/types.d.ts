@@ -1,5 +1,5 @@
 interface SuperHeroes {
-    id: number,
+    id: string,
     name: string,
     alterego: string
 }
