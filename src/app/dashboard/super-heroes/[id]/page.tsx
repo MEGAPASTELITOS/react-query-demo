@@ -12,15 +12,15 @@ export default function SuperHoroesFindOnePage() {
   const [data,setData] = useState<SuperHeroes>()
 
   useEffect(()=> {
-    axios.get(`http://localhost:4000/superheroes/`).then(res => {
-      setData(res.data[Number(params.id) - 1])
+    axios.get(`http://localhost:4000/superheroes/${params?.id}`).then(res => {
+      setData(res.data)
     }).catch((e:Error)=> {
       setError(e.message)
       setLoadingth(false)
     }).finally( () => {
       setLoadingth(false)
     })
-  },[params.id])
+  },[params?.id])
 
   if(loadingth) {
     return (

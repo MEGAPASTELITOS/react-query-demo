@@ -11,9 +11,8 @@ export const getData =  async () => {
 
 export const getDataOne =  async (id:string) => {
     try {
-        const {data}:{data:SuperHeroes[]} = await axios.get("http://localhost:4000/superheroes")
-
-        return data.find((data) => data.id === id)
+        const {data}:{data:SuperHeroes} = await axios.get(`http://localhost:4000/superheroes/${id}`)
+        return data
     } catch (error) {
      console.error(error)
      throw new Error("error to fechist commets")
