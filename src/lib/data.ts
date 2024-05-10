@@ -18,3 +18,12 @@ export const getDataOne =  async (id:string) => {
      throw new Error("error to fechist commets")
     }
 }
+
+export const getFriends =  async () => {
+    try {
+        return await axios.get(`http://localhost:4000/friends`)
+    } catch (error) {
+     console.error(error)
+     throw new Error("error to fechist commets")
+    }
+}
