@@ -15,7 +15,7 @@ export const getDataOne =  async (id:string) => {
         return data
     } catch (error) {
      console.error(error)
-     throw new Error("error to fechist commets")
+     throw new Error("error to fechist data")
     }
 }
 

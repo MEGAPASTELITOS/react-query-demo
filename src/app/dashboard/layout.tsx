@@ -35,7 +35,7 @@ export default function RootLayout({
               ))}
             </ul>
             <div className={
-              `w-4 h-4 rounded-full bg-neutral-100 ${isLoadingHeroes && "bg-yellow-400"} ${isFetchingHeroes && "bg-yellow-400"} ${isErrorHeroes && "bg-red-400"} ${isSuccessHeroes && "bg-green-400"} ${isErrorFriends && "bg-yellow-400"} ${isFetchingFriends && "bg-yellow-400"} ${isErrorFriends && "bg-red-400"} ${isSuccessFriends && "bg-green-400"}`
+              `w-4 h-4 rounded-full bg-neutral-100 ${isLoadingHeroes && "bg-yellow-400"} ${isFetchingHeroes && "bg-yellow-400"} ${isErrorHeroes && "bg-red-400"} ${isSuccessHeroes && "bg-green-400"}`
               }></div>
           </nav>
          <div className="bg-neutral-800 w-full h-[1px]"/>
