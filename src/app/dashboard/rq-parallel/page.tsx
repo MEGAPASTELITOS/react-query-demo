@@ -2,7 +2,7 @@
 
 import { getData, getFriends } from "@/lib/data"
 import { useQuery } from "@tanstack/react-query"
-import Link from "next/link"
+
 
 export default function ParallelPage () {
     const {
@@ -42,9 +42,9 @@ export default function ParallelPage () {
                     {isLoadingHeroes || isFetchingHeroes && (<p className="text-sm">Loading...</p>)}
                     {superHeroes?.data?.map((data:any) => (
                     <article className="flex place-items-center mb-1" key={data.id}>
-                        <Link href={`/dashboard/rq-super-heroes/${data?.id}`} className="focus:border border-green-400 rounded-sm p-2 ">
+                        <div className="focus:border border-green-400 rounded-sm p-2 ">
                             <p>{data.name}</p>
-                        </Link>
+                        </div>
                     </article>
                     ))}
                 </article>
@@ -53,9 +53,9 @@ export default function ParallelPage () {
                     {isLoadingFriends || isFetchingFriends && (<p className="text-sm">Loading...</p>)}
                     {friends?.data?.map((data:any) => (
                     <article className="flex place-items-center mb-1" key={data.id}>
-                        <Link href={`/dashboard/rq-super-heroes/${data?.id}`} className="focus:border border-green-400 rounded-sm p-2 ">
+                        <div className="focus:border border-green-400 rounded-sm p-2 ">
                             <p>{data.name}</p>
-                        </Link>
+                        </div>
                     </article>
                     ))}
                 </article>
